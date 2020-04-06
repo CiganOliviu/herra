@@ -5,13 +5,13 @@ import (
 	"html/template"
 )
 
-type NewsAggPage struct {
-    Title string
-    News string
+type UserRefference struct {
+    FirstName string
+    LastName string
 }
 
-func Index (w http.ResponseWriter, r *http.Request) {
-  p := NewsAggPage{Title: "Amazing News Aggregator", News: "some news"}
-  t, _ := template.ParseFiles("views/index.html")
-  t.Execute(w, p)
+func Index (Writer http.ResponseWriter, Request *http.Request) {
+  user_refference := UserRefference{Title: "Amazing News Aggregator", News: "some news"}
+  setTemplate, _ := template.ParseFiles("views/index.html")
+  setTemplate.Execute(Writer, user_refference)
 }
