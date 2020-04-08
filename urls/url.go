@@ -11,7 +11,7 @@ type UserRefference struct {
 }
 
 func Index (Writer http.ResponseWriter, Request *http.Request) {
-  user_refference := UserRefference{Title: "Amazing News Aggregator", News: "some news"}
+  user_refference := UserRefference{FirstName: "", LastName: ""}
   setTemplate, _ := template.ParseFiles("views/index.html")
   setTemplate.Execute(Writer, user_refference)
 }
